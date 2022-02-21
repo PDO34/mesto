@@ -1,0 +1,26 @@
+.popup__btn_effect_close {
+    width: 32px;
+    height: 32px;
+    background: none;
+    background-image: url(../../../../images/Close_Icon_M.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: -40px;
+    top: -40px;    
+}
+
+.popup__btn_effect_close:hover {
+    opacity: 0.6;
+    transition: 1.2s;
+}
+
+@media screen and (max-width: 900px) {
+    .popup__btn_effect_close {
+        background-image: url(../../../../images/Close_Icon_S.svg);
+        width: 20px;
+        height: 20px;
+        top: -35px;
+        right: 0;
+    }
+}
