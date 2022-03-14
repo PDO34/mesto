@@ -7,6 +7,7 @@
     text-align: center;
     background-color: black;
     border-radius: 2px;
+    width: 358px;
 }
 
 .popup__btn_effect_submit:hover {
@@ -20,5 +21,6 @@
         font-size: 14px;
         line-height: 17px;
         height: 46px;
+        width: 238px;
     }
 }

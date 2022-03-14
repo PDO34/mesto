@@ -1,0 +1,16 @@
+.element__btn-del {
+    border: none;
+    width: 18px;
+    height: 19px;    
+    background: url(../../../images/Bin.svg) center bottom no-repeat, url(../../../images/Cup.svg) center top no-repeat;    
+    background-size: 15.44px, 18px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.element__btn-del:hover {
+    opacity: 0.5;
+    transition: 1s;
+}

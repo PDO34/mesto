@@ -6,6 +6,7 @@
     grid-template-rows: repeat(auto-fill, 361px);
     gap: 20px 17px;
     justify-content: center;
+    padding-left: 0;
 }
 
 @media screen and (max-width: 910px) {

@@ -1,8 +1,10 @@
 .header__logo {
-    width: 100%;
-    max-width: 142px;
-    height: 33px;
-    object-fit: cover;   
+    width: 142px;
+    height: 33px;    
+    background-image: url(../../../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
 }
 
 @media screen and (max-width: 985px) {
@@ -10,4 +12,9 @@
         height: 24.4px;
         max-width: 103.74px;
     }
+}
+
+.header__logo:hover {
+    opacity: 0.6;
+    transition: 1s;
 }

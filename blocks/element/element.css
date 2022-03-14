@@ -3,4 +3,6 @@
     background: white;
     border-radius: 10px;
     font-size: 0;
+    position: relative;
+    list-style-type: none;
 }
