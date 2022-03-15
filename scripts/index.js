@@ -112,8 +112,8 @@ function transferEditPopup(selector) {
 
 //Функция переноса из попапа в профиль
 function transferPopupProfile(selector) {
-  profileName.textContent = selector.popupName.value
-  profileStatus.textContent = selector.profileJob.value
+  profileName.textContent = selector.profileName.value
+  profileStatus.textContent = selector.profileStatus.value
 };
 
 //"Слушаем"
