@@ -47,11 +47,11 @@
     <div class="popup" id="editProfile">
         <div class="popup__container">
             <button class="popup__btn popup__btn_effect_close" type="button" title="Закрытие формы"></button>
-            <form class="popup__form" id="editForm" name="popup_edit_form">
+            <form class="popup__form" id="editForm" name="popup_edit_form" novalidate>
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <input class="popup__row popup__row_data_name" type="text" name="profileName" minlength="3" placeholder="Имя" required>
-                <input class="popup__row popup__row_data_profession" type="text" name="profileStatus" minlength="3" placeholder="Профессия" required>
-            <button class="popup__btn popup__btn_effect_submit" id="editButton" type="submit" title="Сохранение и закрытие формы">Сохранить</button>
+                <input class="popup__row popup__row_data_name" type="text" name="profileName" minlength="2" maxlength="40" placeholder="Имя" required>                
+                <input class="popup__row popup__row_data_profession" type="text" name="profileStatus" minlength="2" maxlength="200" placeholder="Профессия" required>            
+                <button class="popup__btn_effect_submit" id="editButton" type="submit" title="Сохранение и закрытие формы">Сохранить</button>
             </form>
         </div>
     </div>
@@ -60,11 +60,11 @@
     <div class="popup" id="addElement">
         <div class="popup__container">
             <button class="popup__btn popup__btn_effect_close" type="button" title="Закрытие формы"></button>
-            <form class="popup__form" id="addForm" name="element_add_form">
+            <form class="popup__form" id="addForm" name="element_add_form" novalidate>
                 <h3 class="popup__title">Новое место</h3>
-                <input class="popup__row" type="text" name="placeName" minlength="3" placeholder="Название" required>
-                <input class="popup__row" type="text" name="placeLink" minlength="3" placeholder="Ссылка на картинку" required>
-                <button class="popup__btn popup__btn_effect_submit" type="submit" title="Сохранение и закрытие формы">Добавить</button>
+                <input class="popup__row" type="text" name="placeName" minlength="2" maxlength="30" placeholder="Название" required>
+                <input class="popup__row" type="url" name="placeLink" placeholder="Ссылка на картинку" required>
+                <button class="popup__btn_effect_submit" type="submit" title="Сохранение и закрытие формы">Добавить</button>
             </form>
         </div>
     </div>
@@ -91,6 +91,7 @@
     </div>    
     
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 
 </html>

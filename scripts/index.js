@@ -19,6 +19,8 @@ const popupAddElement = document.querySelector('#addElement');
 const popupAddButtonOpenElement = document.querySelector('.profile__add-btn');
 const popupAddButtonCloseElement = popupAddElement.querySelector('.popup__btn_effect_close');
 const popupAddSubmitElement = popupAddElement.querySelector('#addForm');
+// Попапы
+const popups = document.querySelectorAll('.popup');
 
 const initialCards = [
   {
@@ -61,7 +63,7 @@ function createElement(name, link) {
   element.querySelector('.element__btn').addEventListener('click', likeClick);
   element.querySelector('.element__btn-del').addEventListener('click', elementDel);
   element.querySelector('.element__image').addEventListener('click', () => {
-    openPopupForm(popupImage), takeImagePopup()
+    takeImagePopup(), openPopupForm(popupImage)
   });
   return element
 };
@@ -74,6 +76,8 @@ function renderElement(element) {
 //Функция открытие попапа
 function openPopupForm(selector) {
   selector.classList.add('popup_open')
+  selector.addEventListener('click', () => overlayClosePopup(selector))
+  document.addEventListener('keydown', () => escClosePopup(selector))
 };
 
 //Функция закрытия попапа
@@ -116,21 +120,37 @@ function transferPopupProfile(selector) {
   profileStatus.textContent = selector.profileStatus.value
 };
 
+// Функция закрытия попап Esc
+function escClosePopup(selector) {
+  if (event.key == 'Escape') {
+    closePopupForm(selector);
+  }
+  return
+};
+
+// Функция закрытия попапа Overlay
+function overlayClosePopup(selector) {
+  if (event.target == event.currentTarget) {
+    closePopupForm(selector)
+  }
+  return
+};
+
 //"Слушаем"
 popupImageClose.addEventListener('click', () => closePopupForm(popupImage));
 
-popupEditOpenBtnProfile.addEventListener('click', () => { openPopupForm(popupEditProfile), transferEditPopup(popupEditSubmitBtnForm) });
+popupEditOpenBtnProfile.addEventListener('click', () => { transferEditPopup(popupEditSubmitBtnForm), openPopupForm(popupEditProfile) });
 popupEditCloseBtnProfile.addEventListener('click', () => closePopupForm(popupEditProfile));
 popupEditSubmitBtnForm.addEventListener('submit', () => {
   event.preventDefault();
-  transferPopupProfile(popupEditSubmitBtnForm);
   closePopupForm(popupEditProfile);
+  transferPopupProfile(popupEditSubmitBtnForm);
 });
 
-popupAddButtonOpenElement.addEventListener('click', () => { openPopupForm(popupAddElement), cleanBoxPopup(popupAddSubmitElement) });
+popupAddButtonOpenElement.addEventListener('click', () => { cleanBoxPopup(popupAddSubmitElement), openPopupForm(popupAddElement) });
 popupAddButtonCloseElement.addEventListener('click', () => closePopupForm(popupAddElement));
 popupAddSubmitElement.addEventListener('submit', () => {
   event.preventDefault();
-  renderElement(createElement(popupAddSubmitElement.placeName.value, popupAddSubmitElement.placeLink.value));
   closePopupForm(popupAddElement);
+  renderElement(createElement(popupAddSubmitElement.placeName.value, popupAddSubmitElement.placeLink.value));
 });
