@@ -1,3 +1,8 @@
+//Сергей, благодарю за Вас за помощь, когда получаешь развернутый ответ от ревьювера это очень помогает, 
+//попробую еще раз вопроизвести форму на тестовом макете! Вроде исправил все замечания, 
+//кроме падингов у инпутов, т.к. в макете там отступы по 13px, если их убрать текст падает на полоску инпута.
+// Еще раз большое спасибо!
+
 const enableValidation = {
     formSelector: '.popup__form',
     inputSelector: '.popup__row',
@@ -5,7 +10,7 @@ const enableValidation = {
     inactiveButtonClass: 'popup__button_disabled',
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error_visible'
-  }; 
+  };
 
 // Функция "ошибки"
 const showInputError = (formElement, inputElement, errorMessage, enableValidation) => {
@@ -46,7 +51,7 @@ const setEventListeners = (formElement,enableValidation) => {
 };
 
 //Функция определения элемента из массива форм
-function enableValidationCon(enableValidation) {
+function enableValidationForm(enableValidation) {
     const formList = Array.from(document.querySelectorAll(enableValidation.formSelector));
 
     formList.forEach((formElement) => {
@@ -87,4 +92,4 @@ function clearForm(popup, enableValidation) {
     buttonElement.disabled = true;
 };
 
-enableValidationCon(enableValidation);
+enableValidationForm(enableValidation);

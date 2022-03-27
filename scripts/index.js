@@ -1,3 +1,8 @@
+//Сергей, благодарю за Вас за помощь, когда получаешь развернутый ответ от ревьювера это очень помогает, 
+//попробую еще раз вопроизвести форму на тестовом макете! Вроде исправил все замечания, 
+//кроме падингов у инпутов, т.к. в макете там отступы по 13px, если их убрать текст падает на полоску инпута.
+// Еще раз большое спасибо!
+
 //Карточки
 const elementList = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.element-tamplate').content;
@@ -21,6 +26,8 @@ const popupAddButtonCloseElement = popupAddElement.querySelector('.popup__btn_ef
 const popupAddSubmitElement = popupAddElement.querySelector('#addForm');
 // Попапы
 const popups = document.querySelectorAll('.popup');
+// Кнопка при валидации
+const popupAddSubmitButton = popupAddElement.querySelector('.popup__btn-submit');
 
 const initialCards = [
   {
@@ -82,7 +89,7 @@ function openPopupForm(popup) {
 //Функция закрытия попапа
 function closePopupForm(popup) {
   popup.classList.remove('popup_open')
-  document.addEventListener('keydown', escClosePopupForm);
+  document.removeEventListener('keydown', escClosePopupForm);
 };
 
 //Функция закрытия на крестик и оверле
@@ -94,9 +101,9 @@ popups.forEach((popup) => {
     if (evt.target.classList.contains('popup__btn_effect_close')) {
       closePopupForm(popup)
     }
-    if (evt.target === openPopupForm) {
-      closePopupForm(popup);
-    }
+    // if (evt.target === openPopupForm) {
+    //   closePopupForm(popup);
+    // }
   })
 });
 
@@ -154,7 +161,11 @@ popupEditSubmitBtnForm.addEventListener('submit', (event) => {
   closePopupForm(popupEditProfile);  
 });
 
-popupAddButtonOpenElement.addEventListener('click', () => { openPopupForm(popupAddElement), cleanBoxPopup(popupAddSubmitElement) });
+popupAddButtonOpenElement.addEventListener('click', () => { 
+  cleanBoxPopup(popupAddSubmitElement);
+  popupAddSubmitButton.classList.add(enableValidation.inactiveButtonClass);
+  popupAddSubmitButton.disabled = true;
+  openPopupForm(popupAddElement) });
 popupAddButtonCloseElement.addEventListener('click', () => closePopupForm(popupAddElement));
 popupAddSubmitElement.addEventListener('submit', (event) => {
   event.preventDefault();
