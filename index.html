@@ -44,10 +44,10 @@
     </div>
 
     <!-- Код попапа профиля-->
-    <div class="popup" id="editProfile">
+    <div class="popup popup_type-edit" id="editProfile">
         <div class="popup__container">
             <button class="popup__btn popup__btn_effect_close" type="button" title="Закрытие формы"></button>
-            <form class="popup__form" id="editForm" name="popup_edit_form" novalidate>
+            <form class="popup__form" id="editForm" name="popup_edit_form" method="get" action="#" novalidate>
                 <h3 class="popup__title">Редактировать профиль</h3>
 
                 <input class="popup__row popup__row_data_name" type="text" name="profileName" minlength="2" maxlength="40" placeholder="Имя" required>                
@@ -65,13 +65,13 @@
     <div class="popup" id="addElement">
         <div class="popup__container">
             <button class="popup__btn popup__btn_effect_close" type="button" title="Закрытие формы"></button>
-            <form class="popup__form" id="addForm" name="element_add_form" novalidate>
+            <form class="popup__form" id="addForm" name="element_add_form" method="get" action="#" novalidate>
                 <h3 class="popup__title">Новое место</h3>
                 
-                <input class="popup__row" type="text" name="placeName" minlength="2" maxlength="30" placeholder="Название" required>
+                <input class="popup__row popup__row_card_name" type="text" name="placeName" minlength="2" maxlength="30" placeholder="Название" required>
                 <span class="popup__input-error" id="placeNameError"></span>
 
-                <input class="popup__row" type="url" name="placeLink" placeholder="Ссылка на картинку" required>
+                <input class="popup__row popup__row_card_profession" type="url" name="placeLink" placeholder="Ссылка на картинку" required>
                 <span class="popup__input-error" id="placeLinkError"></span>
 
                 <button class="popup__btn-submit" type="submit" title="Сохранение и закрытие формы">Добавить</button>
@@ -82,7 +82,7 @@
     <!-- Код шаблона елемент -->
     <template class="element-tamplate">
         <li class="element">
-            <img class="element__image">
+            <img class="element__image" src="#" alt="#">
             <div class="element__info">
                 <h2 class="element__title"></h2>
                 <button class="element__btn" type="button" title="Лайк"></button>
@@ -92,16 +92,15 @@
     </template>
 
     <!-- Код попапа изображения -->    
-    <div class="popup" id="image">
+    <div class="popup popup_type_photo" id="image">
         <div class="popup__container">
             <button class="popup__btn popup__btn_effect_close" type="button" title="Закрыть"></button>
-            <img class="popup__image">
+            <img class="popup__image" src="#" alt="#">
             <p class="popup__text"></p>
         </div>
     </div>    
     
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>    
 </body>
 
 </html>
