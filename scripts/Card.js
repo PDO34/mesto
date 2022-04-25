@@ -1,4 +1,4 @@
-import { openPopupForm } from './index.js';
+import { openPopup } from './index.js';
 
 const popupImage = document.querySelector('.popup_type_photo');
 const popupImagePicture = popupImage.querySelector('.popup__image');
@@ -49,7 +49,7 @@ export class Card {
     this._deleteBtn.addEventListener('click', () => { this._deleteCard() });
     // Открытие картинки по клику на картинку
     this._cardImage.addEventListener('click', () => {
-      openPopupForm(popupImage)
+      openPopup(popupImage)
 
       popupImagePicture.src = this._link
       popupImageText.textContent = this._name
