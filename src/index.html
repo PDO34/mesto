@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-    <link rel="stylesheet" href="pages/index.css">
+    <!-- <link rel="stylesheet" href="pages/index.css"> -->
 </head>
 
 <body class="body">
@@ -19,7 +19,7 @@
 
             <section class="profile">
                 <div class="profile__info">
-                    <img class="profile__avatar" src="images/profile_photo.jpg" alt="Аватар пользователя">
+                    <img class="profile__avatar" src="<%=require('./images/profile_photo.jpg')%>" alt="Аватар пользователя">
                     <div class="profile__wrapper">
                         <div class="profile__page">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -49,38 +49,40 @@
             <button class="popup__btn popup__btn_effect_close" type="button" title="Закрытие формы"></button>
             <form class="popup__form" id="editForm" name="popup_edit_form" method="get" action="#" novalidate>
                 <h3 class="popup__title">Редактировать профиль</h3>
-
-                <input class="popup__row popup__row_data_name" type="text" name="profileName" minlength="2" maxlength="40" placeholder="Имя" required>                
-                <span class="popup__input-error" id="profileNameError"></span>
-
-                <input class="popup__row popup__row_data_profession" type="text" name="profileStatus" minlength="2" maxlength="200" placeholder="Профессия" required>            
-                <span class="popup__input-error" id="profileStatusError"></span>
-
-                <button class="popup__btn-submit" id="editButton" type="submit" title="Сохранение и закрытие формы">Сохранить</button>
+                <label class="popup__field">
+                    <input class="popup__row popup__row_data_name" id="name-input" type="text" name="profileName" minlength="2" maxlength="40" placeholder="Имя" required>                
+                    <span class="popup__input-error" id="profileNameError"></span>
+                </label>
+                <label class="popup__field">
+                    <input class="popup__row popup__row_data_profession" id="about-input" type="text" name="profileStatus" minlength="2" maxlength="200" placeholder="Профессия" required>            
+                    <span class="popup__input-error" id="profileStatusError"></span>
+                </label>
+                <button class="popup__btn-submit popup__btn-submit_inactive" id="editButton" type="submit" title="Сохранение и закрытие формы">Сохранить</button>
             </form>
         </div>
     </div>
 
     <!-- Код попапа добавления карточки -->
-    <div class="popup" id="addElement">
+    <div class="popup popup_type_cards" id="addElement">
         <div class="popup__container">
             <button class="popup__btn popup__btn_effect_close" type="button" title="Закрытие формы"></button>
             <form class="popup__form" id="addForm" name="element_add_form" method="get" action="#" novalidate>
                 <h3 class="popup__title">Новое место</h3>
-                
-                <input class="popup__row popup__row_card_name" type="text" name="placeName" minlength="2" maxlength="30" placeholder="Название" required>
-                <span class="popup__input-error" id="placeNameError"></span>
-
-                <input class="popup__row popup__row_card_profession" type="url" name="placeLink" placeholder="Ссылка на картинку" required>
-                <span class="popup__input-error" id="placeLinkError"></span>
-
-                <button class="popup__btn-submit" type="submit" title="Сохранение и закрытие формы">Добавить</button>
+                <label class="popup__field">
+                    <input class="popup__row popup__row_card_name" type="text" name="placeName" minlength="2" maxlength="30" placeholder="Название" required>
+                    <span class="popup__input-error" id="placeNameError"></span>
+                </label>
+                <label class="popup__field">
+                    <input class="popup__row popup__row_card_profession" type="url" name="placeLink" placeholder="Ссылка на картинку" required>
+                    <span class="popup__input-error" id="placeLinkError"></span>
+                </label>
+                <button class="popup__btn-submit popup__btn-submit_inactive" type="submit" title="Сохранение и закрытие формы">Добавить</button>
             </form>
         </div>
     </div>
 
     <!-- Код шаблона елемент -->
-    <template class="element-tamplate">
+    <template id="template" class="element-tamplate">
         <li class="element">
             <img class="element__image" src="#" alt="#">
             <div class="element__info">
@@ -100,7 +102,7 @@
         </div>
     </div>    
     
-    <script type="module" src="./scripts/index.js"></script>    
+    <!-- <script type="module" src="./scripts/index.js"></script>     -->
 </body>
 
 </html>
