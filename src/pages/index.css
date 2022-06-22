@@ -37,6 +37,7 @@
 @import url("../blocks/popup/__btn-submit/popup__btn-submit.css");
 @import url("../blocks/popup/__btn-submit/_inactive/popup__btn-submit_inactive.css");
 @import url("../blocks/popup/__form/popup__form.css");
+@import url("../blocks/popup/__field/popup__field.css");
 @import url("../blocks/popup/__title/popup__title.css");
 @import url("../blocks/popup/__row/popup__row.css");
 @import url("../blocks/popup/__container/popup__container.css");
@@ -48,9 +49,6 @@
 @import url("../blocks/popup/__input/_type/popup__input_type_error.css");
 @import url("../blocks/popup/__button/_disabled/popup__button_disabled.css");
 @import url("../blocks/popup/__error/_visible/popup__error_visible.css");
-@import url("../blocks/popup/__row/_data/popup__row_data_name.css");
-@import url("../blocks/popup/__row/_data/popup__row_data_profession.css");
-@import url("../blocks/popup/__row/_card/popup__row_card_name.css");
-@import url("../blocks/popup/__row/_card/popup__row_card_profession.css");
+
 @import url("../blocks/popup/_photo/popup_type_photo.css");
 @import url("../blocks/popup/_type-edit/popup_type-edit.css");

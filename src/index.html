@@ -23,7 +23,7 @@
                     <div class="profile__wrapper">
                         <div class="profile__page">
                             <h1 class="profile__name">Жак-Ив Кусто</h1>
-                            <button class="profile__edit-btn" type="button" title="Редактировать профиль"></button>
+                            <button class="profile__edit-btn" type="button"></button>
                         </div>
                         <p class="profile__status">Исследователь океана</p>
                     </div>                    
@@ -44,20 +44,20 @@
     </div>
 
     <!-- Код попапа профиля-->
-    <div class="popup popup_type-edit" id="editProfile">
+    <div class="popup popup_type-edit">
         <div class="popup__container">
             <button class="popup__btn popup__btn_effect_close" type="button" title="Закрытие формы"></button>
             <form class="popup__form" id="editForm" name="popup_edit_form" method="get" action="#" novalidate>
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <label class="popup__field">
-                    <input class="popup__row popup__row_data_name" id="name-input" type="text" name="profileName" minlength="2" maxlength="40" placeholder="Имя" required>                
+                    <input class="popup__row" id="name-input" type="text" name="profileName" minlength="2" maxlength="40" placeholder="Имя" required>                
                     <span class="popup__input-error" id="profileNameError"></span>
                 </label>
                 <label class="popup__field">
-                    <input class="popup__row popup__row_data_profession" id="about-input" type="text" name="profileStatus" minlength="2" maxlength="200" placeholder="Профессия" required>            
+                    <input class="popup__row" id="about-input" type="text" name="profileStatus" minlength="2" maxlength="200" placeholder="Профессия" required>            
                     <span class="popup__input-error" id="profileStatusError"></span>
                 </label>
-                <button class="popup__btn-submit popup__btn-submit_inactive" id="editButton" type="submit" title="Сохранение и закрытие формы">Сохранить</button>
+                <button class="popup__btn-submit popup__btn-submit_inactive" type="submit">Сохранить</button>
             </form>
         </div>
     </div>
@@ -69,14 +69,14 @@
             <form class="popup__form" id="addForm" name="element_add_form" method="get" action="#" novalidate>
                 <h3 class="popup__title">Новое место</h3>
                 <label class="popup__field">
-                    <input class="popup__row popup__row_card_name" type="text" name="placeName" minlength="2" maxlength="30" placeholder="Название" required>
-                    <span class="popup__input-error" id="placeNameError"></span>
+                    <input class="popup__row" type="text" name="placeName" minlength="2" maxlength="30" placeholder="Название" required>
+                    <span class="popup__input-error"></span>
                 </label>
                 <label class="popup__field">
-                    <input class="popup__row popup__row_card_profession" type="url" name="placeLink" placeholder="Ссылка на картинку" required>
-                    <span class="popup__input-error" id="placeLinkError"></span>
+                    <input class="popup__row" type="url" name="placeLink" placeholder="Ссылка на картинку" required>
+                    <span class="popup__input-error"></span>
                 </label>
-                <button class="popup__btn-submit popup__btn-submit_inactive" type="submit" title="Сохранение и закрытие формы">Добавить</button>
+                <button class="popup__btn-submit popup__btn-submit_inactive" type="submit">Добавить</button>
             </form>
         </div>
     </div>
