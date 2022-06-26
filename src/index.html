@@ -50,11 +50,11 @@
             <form class="popup__form" id="editForm" name="popup_edit_form" method="get" action="#" novalidate>
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <label class="popup__field">
-                    <input class="popup__row" id="name-input" type="text" name="profileName" minlength="2" maxlength="40" placeholder="Имя" required>                
+                    <input class="popup__row" id="name-input" type="text" name="userName" minlength="2" maxlength="40" placeholder="Имя" required>                
                     <span class="popup__input-error" id="profileNameError"></span>
                 </label>
                 <label class="popup__field">
-                    <input class="popup__row" id="about-input" type="text" name="profileStatus" minlength="2" maxlength="200" placeholder="Профессия" required>            
+                    <input class="popup__row" id="about-input" type="text" name="userAbout" minlength="2" maxlength="200" placeholder="Профессия" required>            
                     <span class="popup__input-error" id="profileStatusError"></span>
                 </label>
                 <button class="popup__btn-submit popup__btn-submit_inactive" type="submit">Сохранить</button>
@@ -69,11 +69,11 @@
             <form class="popup__form" id="addForm" name="element_add_form" method="get" action="#" novalidate>
                 <h3 class="popup__title">Новое место</h3>
                 <label class="popup__field">
-                    <input class="popup__row" type="text" name="placeName" minlength="2" maxlength="30" placeholder="Название" required>
+                    <input class="popup__row" type="text" name="name" minlength="2" maxlength="30" placeholder="Название" required>
                     <span class="popup__input-error"></span>
                 </label>
                 <label class="popup__field">
-                    <input class="popup__row" type="url" name="placeLink" placeholder="Ссылка на картинку" required>
+                    <input class="popup__row" type="url" name="link" placeholder="Ссылка на картинку" required>
                     <span class="popup__input-error"></span>
                 </label>
                 <button class="popup__btn-submit popup__btn-submit_inactive" type="submit">Добавить</button>
